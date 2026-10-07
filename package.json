@@ -1,0 +1,39 @@
+{
+  "name": "mdx-slides-monorepo",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.8.1",
+  "scripts": {
+    "build:packages": "pnpm --dir ../react-platform --filter @react-platform/mdx build && pnpm -r --sort build",
+    "typecheck": "pnpm build:packages && tsc -p examples/web/tsconfig.json --noEmit && tsc -p packages/strict-dom/tsconfig.json --noEmit --customConditions react-native && tsc -p tests/tsconfig.json",
+    "test": "pnpm build:packages && node --import tsx --test tests/*.test.ts",
+    "dev": "pnpm build:packages && vite examples/web",
+    "build": "pnpm build:packages && vite build examples/web",
+    "export:pdf": "pnpm build:packages && mdx-slides-pdf",
+    "export:pdf:example": "pnpm export:pdf examples/web/deck.mdx --config examples/web/pdf.config.ts --output output/pdf/example.pdf"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@mdx-js/mdx": "^3.1.0",
+    "@mdx-slides/compiler": "workspace:*",
+    "@mdx-slides/core": "workspace:*",
+    "@mdx-slides/pdf": "workspace:*",
+    "@mdx-slides/primitives": "workspace:*",
+    "@mdx-slides/rollup": "workspace:*",
+    "@mdx-slides/strict-dom": "workspace:*",
+    "@mdx-slides/vite": "workspace:*",
+    "@mdx-slides/web": "workspace:*",
+    "@types/babel__core": "^7.20.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "pdf-lib": "^1.17.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-strict-dom": "0.0.55",
+    "rollup": "^4.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vite": "^6.0.0"
+  }
+}

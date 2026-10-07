@@ -1,0 +1,30 @@
+{
+  "name": "@mdx-slides/strict-dom",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./tokens.css": {
+      "types": "./dist/tokens.css.d.ts",
+      "import": "./dist/tokens.css.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-strict-dom": "^0.0.55"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@mdx-slides/core": "workspace:*"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@mdx-slides/vite",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "dependencies": {
+    "@mdx-slides/rollup": "workspace:*"
+  },
+  "peerDependencies": {
+    "vite": ">=6"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  }
+}

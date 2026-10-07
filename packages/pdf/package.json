@@ -1,0 +1,32 @@
+{
+  "name": "@mdx-slides/pdf",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "mdx-slides-pdf": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@mdx-slides/compiler": "workspace:*",
+    "@mdx-slides/strict-dom": "workspace:*",
+    "@react-pdf/renderer": "^4.3.0",
+    "esbuild": "^0.25.0",
+    "@mdx-slides/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  }
+}

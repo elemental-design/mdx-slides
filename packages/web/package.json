@@ -1,0 +1,27 @@
+{
+  "name": "@mdx-slides/web",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-strict-dom": "^0.0.55"
+  },
+  "dependencies": {
+    "@mdx-slides/core": "workspace:*",
+    "@mdx-slides/strict-dom": "workspace:*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  }
+}

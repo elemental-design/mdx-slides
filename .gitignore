@@ -147,3 +147,16 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Ahead-of-time MDX modules
+*.mdx.js
+*.mdx.slide-*.js
+
+*.mdx.d.ts
+*.md.js
+*.md.slide-*.js
+*.md.d.ts
+
+# PDF exports and visual checks
+output/
+tmp/
